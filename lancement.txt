@@ -1,0 +1,1 @@
+ansible-playbook -i hosts.ini pull_images.yml --ask-become-pass

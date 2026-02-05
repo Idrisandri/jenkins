@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Pull images Docker légères
+      community.docker.docker_image:
+        name: "{{ item }}"
+        source: pull
+      loop:
+        - node:20-alpine
+        - python:3.11-alpine
+        - nginx:alpine
+        - mysql:8.0-oraclelinux8
+        - redis:alpine
