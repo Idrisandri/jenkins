@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                 python3 --version
                 python3 -m pip install --break-system-packages --user --upgrade pip
-                python3 -m pip install --break-system-packages --user ansible
+                python3 -m pip install --break-system-packages --user ansible requests docker
                 ansible-galaxy collection install community.docker --force
                 '''
             }
