@@ -1,1 +1,21 @@
 ansible-playbook -i hosts.ini pull_images.yml --ask-become-pass
+
+
+
+
+voila le image yml  dans le local:
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: Pull images Docker légères
+      community.docker.docker_image:
+        name: "{{ item }}"
+        source: pull
+      loop:
+        - node:20-alpine
+        - python:3.11-alpine
+        - nginx:alpine
+        - mysql:8.0-oraclelinux8
+        - redis:alpine
+

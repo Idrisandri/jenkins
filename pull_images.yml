@@ -1,6 +1,7 @@
 ---
 - hosts: all
-  become: true
+  become: false
+  connection: local
   tasks:
     - name: Pull images Docker légères
       community.docker.docker_image:
