@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         ANSIBLE_HOST_KEY_CHECKING = "False"
-        PATH = "$PATH:/var/jenkins_home/.local/bin"  // ← CHANGÉ
+        PATH = "$PATH:/var/jenkins_home/.local/bin"
     }
     
     stages {
@@ -11,9 +11,9 @@ pipeline {
             steps {
                 sh '''
                 python3 --version
-                python3 -m pip install --break-system-packages --user --upgrade pip  // ← AJOUTÉ --break-system-packages
-                python3 -m pip install --break-system-packages --user ansible        // ← AJOUTÉ --break-system-packages + RETIRÉ community.docker
-                ansible-galaxy collection install community.docker --force           // ← NOUVELLE LIGNE
+                python3 -m pip install --break-system-packages --user --upgrade pip
+                python3 -m pip install --break-system-packages --user ansible
+                ansible-galaxy collection install community.docker --force
                 '''
             }
         }
