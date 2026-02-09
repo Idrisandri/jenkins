@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  become: false
+  become: true
   connection: local
   tasks:
     - name: Pull images Docker légères
